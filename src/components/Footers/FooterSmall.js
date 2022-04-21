@@ -3,7 +3,7 @@ import React from "react";
 export default function FooterSmall(props) {
   return (
     <>
-      <footer
+      {/* <footer
         className={
           (props.absolute
             ? "absolute w-full bottom-0 bg-blueGray-800"
@@ -62,7 +62,7 @@ export default function FooterSmall(props) {
             </div>
           </div>
         </div>
-      </footer>
+      </footer> */}
     </>
   );
 }
