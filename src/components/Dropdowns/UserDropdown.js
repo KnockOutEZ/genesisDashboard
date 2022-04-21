@@ -1,5 +1,6 @@
 import React from "react";
 import { createPopper } from "@popperjs/core";
+import { Link } from "react-router-dom";
 
 const UserDropdown = () => {
   // dropdown props
@@ -43,33 +44,31 @@ const UserDropdown = () => {
           "bg-white text-base z-50 float-left py-2 list-none text-left rounded shadow-lg min-w-48"
         }
       >
-        <a
-          href="#pablo"
-          className={
-            "text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
-          }
-          onClick={(e) => e.preventDefault()}
-        >
-          Action
-        </a>
-        <a
-          href="#pablo"
-          className={
-            "text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
-          }
-          onClick={(e) => e.preventDefault()}
-        >
-          Another action
-        </a>
-        <a
-          href="#pablo"
-          className={
-            "text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
-          }
-          onClick={(e) => e.preventDefault()}
-        >
-          Something else here
-        </a>
+        <li className="items-center">
+                <Link
+                  className={
+                    "text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"}            
+                  to="/profile"
+                >
+                  <i className="fas fa-user-circle text-blueGray-400 mr-2 text-sm"></i>{" "}
+                  Profile Page
+                </Link>
+              </li>
+              <Link
+                  className={
+                    "text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"} 
+                  to="/admin/settings"
+                >
+                  <i
+                    className={
+                      "fas fa-tools mr-2 text-sm " +
+                      (window.location.href.indexOf("/admin/settings") !== -1
+                        ? "opacity-75"
+                        : "text-blueGray-300")
+                    }
+                  ></i>{" "}
+                  Settings
+                </Link>
         <div className="h-0 my-2 border border-solid border-blueGray-100" />
         <a
           href="#pablo"
@@ -77,8 +76,12 @@ const UserDropdown = () => {
             "text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
           }
           onClick={(e) => e.preventDefault()}
-        >
-          Seprated link
+        ><i
+        className={
+          "fas fa-power-off mr-2 text-sm "
+        }
+      ></i>
+          Logout
         </a>
       </div>
     </>
