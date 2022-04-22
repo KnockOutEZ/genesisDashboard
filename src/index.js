@@ -33,14 +33,21 @@ ReactDOM.render(
   <BrowserRouter>
     <Switch>
       {/* add routes with layouts */}
-      <Route path="/admin" component={Admin} />
-      <Route path="/auth" component={Auth} />
+      {
+        (localStorage.getItem("user"))
+          ? <Route path="/admin" component={Admin}/>
+          : <Route path="/auth" component={Auth} />
+      }
+      
       {/* add routes without layouts */}
       <Route path="/landing" exact component={Landing} />
       <Route path="/profile" exact component={Profile} />
-      {/* <Route path="/" exact component={Index} /> */}
       {/* add redirect for first page */}
-      <Redirect from="*" to="/admin" />
+      {
+        (localStorage.getItem("user"))
+          ? <Redirect from="*" to="/admin/dashboard" />
+          : <Redirect from="*" to="/auth/login" />
+      }
     </Switch>
   </BrowserRouter>,
   document.getElementById("root")
