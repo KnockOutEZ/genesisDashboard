@@ -4,6 +4,7 @@ import InputField from "./InputField";
 // components
 
 export default function Form(props) {
+  console.log(props)
   return (
     <>
       <div className="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-blueGray-100 border-0">
@@ -36,13 +37,11 @@ export default function Form(props) {
               {props.formTitle}
             </h6>
             <div className="flex flex-wrap">
-            {/* {props.elements.map((value, index) => {
-        return (<InputField
-          // FieldName={value.FieldName}
-          // type={value.type}
-          // value={value.value}
-        />)
-      })} */}
+        {/* <InputField
+          FieldName={}
+          type={value.type}
+          value={value.value}
+        /> */}
             </div>
           </form>
         </div>

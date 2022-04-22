@@ -1,27 +1,42 @@
-import React from "react";
+import { useState, useEffect } from "react";
+import SettingComponent from "components/Utils/SettingComponent";
+import axios from 'axios';
+import authHeader from '../../components/services/auth-header';
+const API_URL = "https://rest-api-portfolio-production.up.railway.app/";
 
-// components
+const Settings = () => {
+  const [userData, setUserData] = useState({});
 
-import Form from "components/Utils/Form";
-import CardProfile from "components/Cards/CardProfile.js";
+  useEffect(() => {
+    axios.get(API_URL + 'users/'+localStorage.getItem('userid'), { headers: authHeader() })
+      .then((response) => {
+        setUserData(response.data);
+      })
+      .catch((error) => {
+        console.log("Error is: " + error);
+      });
+  }, []);
 
-export default function Settings() {
+  function editUserData() {
+    return axios.put(API_URL + 'users/'+localStorage.getItem('userid'), { headers: authHeader() });
+  }
+
+  function deleteUserData() {
+    axios.delete(API_URL + 'users/'+localStorage.getItem('userid'), { headers: authHeader() });
+  }
+
   return (
-    <>
-      <div className="flex flex-wrap">
-        <div className="w-full lg:w-8/12 px-4">
-          <Form
-            width="6/12"
-            // formName={value.formName}
-            // formTitle={value.formTitle}
-            // HandleSaveFunc={HandleSaveFunc}
-            // HandleDeleteFunc={HandleDeleteFunc}
-          />
-        </div>
-        <div className="w-full lg:w-4/12 px-4">
-          <CardProfile />
-        </div>
-      </div>
+    userData && <>
+    <SettingComponent
+    formWidth="8/12"
+      formName={"My Account"}
+      formTitle={"Your Infos"}
+      formElements={userData}
+      HandleSaveFunc={editUserData}
+      HandleDeleteFunc={deleteUserData}
+    ></SettingComponent>
     </>
   );
 }
+
+export default Settings;
