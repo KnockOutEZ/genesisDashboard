@@ -1,9 +1,9 @@
 import axios from "axios";
-const API_URL = process.env.API_URL
+const API_URL = "https://rest-api-portfolio-production.up.railway.app/"
 class AuthService {
   login(email, password) {
     return axios
-      .post(API_URL + "user", {
+      .post(API_URL + "login", {
         email,
         password
       })
@@ -18,7 +18,7 @@ class AuthService {
     localStorage.removeItem("user");
   }
   register(name, email, password) {
-    return axios.post(API_URL + "login", {
+    return axios.post(API_URL + "user", {
       name,
       email,
       password
