@@ -16,6 +16,19 @@ import Landing from "views/Landing.js";
 import Profile from "views/Profile.js";
 // import Index from "views/Index.js";
 
+
+// const (__isMounted, setMounted) = useState(false);
+
+// useEffect(() => {
+//   if(localStorage.getItem("user") && __isMounted) {
+//      history.push("/admin");
+//    }else{
+//     history.push("/auth");
+//    }
+ 
+//   return () => setMounted(false);
+//  }, []);
+
 ReactDOM.render(
   <BrowserRouter>
     <Switch>
