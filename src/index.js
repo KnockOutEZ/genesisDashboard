@@ -40,7 +40,7 @@ ReactDOM.render(
       }
       
       {/* add routes without layouts */}
-      <Route path="/landing" exact component={Landing} />
+      {/* <Route path="/landing" exact component={Landing} /> */}
       <Route path="/profile" exact component={Profile} />
       {/* add redirect for first page */}
       {

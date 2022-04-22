@@ -1,6 +1,7 @@
 import React from "react";
 import { createPopper } from "@popperjs/core";
 import { Link } from "react-router-dom";
+import AuthService from "../../components/services/auth.services";
 
 const UserDropdown = () => {
   // dropdown props
@@ -70,19 +71,18 @@ const UserDropdown = () => {
                   Settings
                 </Link>
         <div className="h-0 my-2 border border-solid border-blueGray-100" />
-        <a
-          href="#pablo"
+        <button
           className={
             "text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
           }
-          onClick={(e) => e.preventDefault()}
+          onClick={AuthService.logout}
         ><i
         className={
           "fas fa-power-off mr-2 text-sm "
         }
       ></i>
           Logout
-        </a>
+        </button>
       </div>
     </>
   );
