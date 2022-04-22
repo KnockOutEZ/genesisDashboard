@@ -1,10 +1,75 @@
 import React from "react";
 import InputField from "./InputField";
-
 // components
 
 export default function Form(props) {
   console.log(props)
+
+  let value = [
+    {
+      name: "*Username",
+      type: "text",
+      value:props.formElements.name,
+      width:"6/12",
+    },
+    {
+      name: "*Email",
+      type: "email",
+      value:props.formElements.email,
+      width:"6/12",
+    },
+    {
+      name: "Age",
+      type: "text",
+      value:props.formElements.age,
+      width:"6/12",
+    },
+    {
+      name: "What Do You Do",
+      type: "text",
+      value:props.formElements.what_do_you_do,
+      width:"6/12",
+    },
+    {
+      name: "Your Moto/Title",
+      type: "textarea",
+      value:props.formElements.moto,
+      width:"6/12",
+    },
+    {
+      name: "Contact Number",
+      type: "text",
+      value:props.formElements.phone_number,
+      width:"6/12",
+    },
+    {
+      name: "Profile Image (link)",
+      type: "text",
+      value:props.formElements.profile_img,
+      width:"6/12",
+    },
+    {
+      name: "profile_icon (link/anchor tag)",
+      type: "text",
+      value:props.formElements.value,
+      width:"6/12",
+    },
+    {
+      name: "New Password",
+      type: "password",
+      value:"",
+      width:"12/12",
+    },
+
+    {
+      name: "About You",
+      type: "textarea",
+      value:props.formElements.about_you,
+      width:"12/12",
+    }
+  ];
+
+
   return (
     <>
       <div className="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-blueGray-100 border-0">
@@ -37,11 +102,15 @@ export default function Form(props) {
               {props.formTitle}
             </h6>
             <div className="flex flex-wrap">
-        {/* <InputField
-          FieldName={}
-          type={value.type}
-          value={value.value}
-        /> */}
+            {
+              value.map((item,i) => <InputField key={i}
+              FieldName={item.name}
+              type={item.type}
+              value={item.value}
+              width={item.width}
+            /> )
+            }
+              
             </div>
           </form>
         </div>
