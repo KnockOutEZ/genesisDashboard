@@ -9,7 +9,6 @@ const SettingComponent = (props) => {
               formName={props.formName}
               formTitle={props.formTitle}
               formElements={props.formElements}
-              HandleSaveFunc={props.HandleSaveFunc}
               HandleDeleteFunc={props.HandleDeleteFunc}
             />
           </div>

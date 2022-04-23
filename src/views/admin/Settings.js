@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import SettingComponent from "components/Utils/SettingComponent";
 import axios from 'axios';
 import authHeader from '../../components/services/auth-header';
+import AuthService from '../../components/services/auth.services';
 const API_URL = "https://rest-api-portfolio-production.up.railway.app/";
 
 const Settings = () => {
@@ -17,12 +18,12 @@ const Settings = () => {
       });
   }, []);
 
-  function editUserData() {
-    return axios.put(API_URL + 'users/'+localStorage.getItem('userid'), { headers: authHeader() });
-  }
-
   function deleteUserData() {
-    axios.delete(API_URL + 'users/'+localStorage.getItem('userid'), { headers: authHeader() });
+    axios.delete(API_URL + 'users/'+localStorage.getItem('userid'), { headers: authHeader() })
+    .then(()=>{
+      AuthService.logout()
+    })
+    
   }
 
   return (
@@ -32,7 +33,6 @@ const Settings = () => {
       formName={"My Account"}
       formTitle={"Your Infos"}
       formElements={userData}
-      HandleSaveFunc={editUserData}
       HandleDeleteFunc={deleteUserData}
     ></SettingComponent>
     </>
