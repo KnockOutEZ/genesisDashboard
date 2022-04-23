@@ -22,8 +22,7 @@ const Settings = () => {
     axios.delete(API_URL + 'users/'+localStorage.getItem('userid'), { headers: authHeader() })
     .then(()=>{
       AuthService.logout()
-    })
-    
+    }) 
   }
 
   return (

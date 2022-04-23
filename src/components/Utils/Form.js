@@ -14,7 +14,13 @@ export default function Form(props) {
     data.age = event.target.elements.age.value
     data.email = event.target.elements.email.value
     data.moto = event.target.elements.moto.value
-    data.password = event.target.elements.password.value
+    if (event.target.elements.password.value == ""){
+      data.password = props.formElements.password
+    }
+    else{
+      data.password = event.target.elements.password.value
+    }
+    
     data.phone_number = event.target.elements.phone_number.value
     data.profile_icon = event.target.elements.profile_icon.value
     data.profile_img = event.target.elements.profile_img.value
@@ -24,7 +30,12 @@ export default function Form(props) {
   }
 
   function editUserData() {
-    axios.put(API_URL + 'users/'+localStorage.getItem('userid'),formData, { headers: authHeader() });
+    axios.put(API_URL + 'users/'+localStorage.getItem('userid'),formData, { headers: authHeader() })
+    .then(response =>{
+      localStorage.removeItem("user");
+      localStorage.removeItem("userid");
+      window.location.reload()
+    });
   }
 
 
@@ -42,7 +53,7 @@ export default function Form(props) {
                 className="bg-lightBlue-500 text-white active:bg-lightBlue-600 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 ease-linear transition-all duration-150"
                 type="submit"
               >
-                Save
+                Save And Logout
               </button>
               <button
                 onClick={props.HandleDeleteFunc}
