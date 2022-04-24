@@ -1,5 +1,5 @@
 import axios from "axios";
-const API_URL = "https://rest-api-portfolio-production.up.railway.app/"
+const API_URL = "http://localhost:8080/"
 class AuthService {
   login(email, password) {
     return axios
@@ -9,7 +9,7 @@ class AuthService {
       })
       .then(response => {
         if (response.data.token) {
-          localStorage.setItem("user", JSON.stringify(response.data.token));
+          localStorage.setItem("user", response.data.token);
           localStorage.setItem("userid", JSON.stringify(response.data.id));
         }
         return response.data;
