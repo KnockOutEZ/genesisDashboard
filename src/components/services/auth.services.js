@@ -1,5 +1,5 @@
 import axios from "axios";
-const API_URL = "http://localhost:8080/"
+const API_URL = "https://rest-api-portfolio-production.up.railway.app/"
 class AuthService {
   login(email, password) {
     return axios
