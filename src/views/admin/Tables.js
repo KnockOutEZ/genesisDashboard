@@ -19,10 +19,6 @@ const Tables = () => {
       });
   }, []);
 
-  function setSkills(arg){
-    setMySkillsData(arg)
-  }
-
   function deleteMySkill(id){
     axios.delete(API_URL + 'skills/' + id, { headers: authHeader() })
       .then((response) => {

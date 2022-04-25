@@ -14,6 +14,8 @@ import Dashboard from "views/admin/Dashboard.js";
 import Maps from "views/admin/Maps.js";
 import Settings from "views/admin/Settings.js";
 import Tables from "views/admin/Tables.js";
+import AddSkills from "components/Sections/Skills/AddSkills";
+// import EditSkills from "components/Sections/Skills/EditSkills";
 
 export default function Admin() {
   return (
@@ -29,6 +31,8 @@ export default function Admin() {
             {/* <Route path="/admin/maps" exact component={Maps} /> */}
             <Route path="/admin/settings" exact component={Settings} />
             <Route path="/admin/tables" exact component={Tables} />
+            <Route path="/admin/addskills" exact component={AddSkills} />
+            {/* <Route path="/admin/editskills" exact component={EditSkills} /> */}
             <Redirect from="/admin" to="/admin/dashboard" />
           </Switch>
           <FooterAdmin />
