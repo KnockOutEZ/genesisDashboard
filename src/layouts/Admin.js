@@ -31,7 +31,7 @@ export default function Admin() {
             {/* <Route path="/admin/maps" exact component={Maps} /> */}
             <Route path="/admin/settings" exact component={Settings} />
             <Route path="/admin/tables" exact component={Tables} />
-            <Route path="/admin/addskills" exact component={AddSkills} />
+            <Route path="/admin/skills/add" exact component={AddSkills} />
             {/* <Route path="/admin/editskills" exact component={EditSkills} /> */}
             <Redirect from="/admin" to="/admin/dashboard" />
           </Switch>
