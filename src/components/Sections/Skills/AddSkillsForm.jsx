@@ -1,6 +1,20 @@
 
 const SkillsForm = (props) => {
-  console.log(props);
+  let formData = {}
+  const handleSubmit = (event) => {
+    event.preventDefault()
+    let data = formData
+    data.skill_name = event.target.elements.skill_name.value
+    data.skill_title = event.target.elements.skill_title.value
+    data.skill_progress = event.target.elements.skill_progress.value
+    data.skill_description = event.target.elements.skill_description.value
+    data.skill_links = event.target.elements.skill_links.value
+    data.skill_icon = event.target.elements.skill_icon.value
+    data.user_id = JSON.parse(localStorage.getItem('userid'))
+    console.log(data)
+    props.handleSubmit(data)
+  }
+
   return (
       <div className="flex flex-wrap">
         <div className={`w-full lg:w-` + props.formWidth + ` px-4`}>
@@ -29,7 +43,7 @@ const SkillsForm = (props) => {
               </div>
             </div>
             <div className="flex-auto px-4 lg:px-10 py-10 pt-0">
-              <form id="skills-form" onSubmit={props.handleSubmit}>
+              <form id="skills-form" onSubmit={handleSubmit}>
                 <h6 className="text-blueGray-400 text-sm mt-3 mb-6 font-bold uppercase">
                   {props.formTitle}
                 </h6>

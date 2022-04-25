@@ -17,10 +17,11 @@ const AddSkills = () =>{
   //     });
   // }, []);
 
-  function AddASkill(){
-    axios.post(API_URL + 'skills',{mySkills}, { headers: authHeader() })
+  function AddASkill(arg){
+    console.log(arg)
+    axios.post(API_URL + 'skills',arg, { headers: authHeader() })
       .then((response) => {
-        setMySkillsData(response.data)
+        // setMySkillsData(response.data)
       })
       .catch((error) => {
         console.log("Error is: " + error);
