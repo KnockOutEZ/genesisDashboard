@@ -2,6 +2,7 @@ import Form from "../Utils/Form";
 import CardProfile from "../Cards/CardProfile";
 
 const SettingComponent = (props) => {
+  console.log(props)
     return ( <>
         <div className="flex flex-wrap">
           <div className={`w-full lg:w-`+props.formWidth +` px-4`}>
