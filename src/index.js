@@ -1,7 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
-
+import { render } from 'react-dom'
+import { transitions, positions, Provider as AlertProvider } from 'react-alert'
+import AlertTemplate from 'react-alert-template-basic'
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "assets/styles/tailwind.css";
 
@@ -29,8 +31,14 @@ import Profile from "views/Profile.js";
 //   return () => setMounted(false);
 //  }, []);
 
+const options = {
+  timeout: 5000,
+  position: positions.BOTTOM_CENTER
+}
+
 ReactDOM.render(
-  <BrowserRouter>
+  <AlertProvider template={AlertTemplate} {...options}>
+    <BrowserRouter>
     <Switch>
       {/* add routes with layouts */}
       {
@@ -49,6 +57,7 @@ ReactDOM.render(
           : <Redirect from="*" to="/auth/login" />
       }
     </Switch>
-  </BrowserRouter>,
+  </BrowserRouter>
+  </AlertProvider>,
   document.getElementById("root")
 );

@@ -3,10 +3,12 @@ import AddSkillsForm from "./AddSkillsForm.jsx";
 import axios from 'axios';
 import authHeader from "../../services/auth-header";
 import { useHistory } from "react-router-dom";
+import { useAlert } from 'react-alert'
 const API_URL = "https://rest-api-portfolio-production.up.railway.app/";
 
 
 const AddSkills = () =>{
+  const alert = useAlert()
   let history = useHistory()	
     const [mySkills, setMySkillsData] = useState();
     const [error, seterrorData] = useState();
@@ -25,18 +27,17 @@ const AddSkills = () =>{
     console.log(arg)
     axios.post(API_URL + 'skills',arg, { headers: authHeader() })
       .then((response) => {
-        // setMySkillsData(response.data)
+        alert.success("Lets goooo!!")
         history.push("/admin/tables")
       })
       .catch((error) => {
-        seterrorData(error.response.data.error)
-        console.log(error.response.data.error)
+        alert.error(error.response.data.error)
       });
   }
 
     return(
         <div>
-        <AddSkillsForm formWidth={"12/12"} formName={"Create New Skill"} formTitle={"Skill Infos"} handleSubmit={AddASkill} errormsg={error}/>
+        <AddSkillsForm formWidth={"12/12"} formName={"Create New Skill"} formTitle={"Skill Infos"} handleSubmit={AddASkill}/>
         </div>
     )
 }

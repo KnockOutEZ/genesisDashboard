@@ -1,5 +1,5 @@
 
-const AddSkillsForm = (props) => {
+const EditSkills = (props) => {
   let formData = {}
   const handleSubmit = (event) => {
     event.preventDefault()
@@ -47,9 +47,6 @@ const AddSkillsForm = (props) => {
                 <h6 className="text-blueGray-400 text-sm mt-3 mb-6 font-bold uppercase">
                   {props.formTitle}
                 </h6>
-                {props.errormsg && <div className="w-full lg:w-12/12 text-left text-red-500 p-4">
-              {props.errormsg}
-              </div>}
                 <div className="flex flex-wrap">
                   <div className={`w-full lg:w-` + "6/12" + ` px-4`}>
                     <div className="relative w-full mb-3">
@@ -168,4 +165,4 @@ const AddSkillsForm = (props) => {
   );
 };
 
-export default AddSkillsForm;
+export default EditSkills;
