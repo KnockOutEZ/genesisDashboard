@@ -1,5 +1,5 @@
 import {useState,useEffect} from "react";
-import CardTable from "components/Cards/CardTable.js";
+import SkillsCardTable from "components/Sections/Skills/SkillsCardTable.js";
 import axios from 'axios';
 import authHeader from "components/services/auth-header";
 const API_URL = "https://rest-api-portfolio-production.up.railway.app/";
@@ -38,7 +38,7 @@ const Tables = () => {
     <>
       <div className="flex flex-wrap mt-4">
         <div className="w-full mb-12 px-4">
-          <CardTable color= {"light"} getData={mySkills} deleteMySkill={deleteMySkill}/>
+          <SkillsCardTable color= {"light"} getData={mySkills} deleteMySkill={deleteMySkill}/>
         </div>
         {/* <div className="w-full mb-12 px-4">
           <CardTable color="dark" />

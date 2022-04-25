@@ -3,12 +3,9 @@ import PropTypes from "prop-types";
 
 // components
 
-import TableDropdown from "components/Dropdowns/TableDropdown.js";
+import TableDropdown from "./TableDropdown";
 
-export default function CardTable( props ) {
-  function getdtata(){
-    console.log(props.getData)
-  }
+export default function SkillsCardTable( props ) {
   return (
     <>
       <div
@@ -110,7 +107,7 @@ export default function CardTable( props ) {
             </thead>
             {
               props.getData.map((data) =>
-              <tbody>
+              <tbody key={data.id}>
               <tr>
                 <th className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-wrap p-4 text-left flex items-center">
                   <img
@@ -167,10 +164,10 @@ export default function CardTable( props ) {
   );
 }
 
-CardTable.defaultProps = {
+SkillsCardTable.defaultProps = {
   color: "light",
 };
 
-CardTable.propTypes = {
+SkillsCardTable.propTypes = {
   color: PropTypes.oneOf(["light", "dark"]),
 };
