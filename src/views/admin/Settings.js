@@ -32,7 +32,7 @@ const Settings = () => {
   return (
     userData && <>
     <SettingComponent
-    formWidth="8/12"
+    formWidth="12/12"
       formName={"My Account"}
       formTitle={"Your Infos"}
       formElements={userData}

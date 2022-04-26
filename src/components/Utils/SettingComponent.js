@@ -13,9 +13,9 @@ const SettingComponent = (props) => {
               HandleDeleteFunc={props.HandleDeleteFunc}
             />
           </div>
-          <div className="w-full lg:w-4/12 px-4">
+          {/* <div className="w-full lg:w-4/12 px-4">
             <CardProfile />
-          </div>
+          </div> */}
         </div>
       </> );
 }
