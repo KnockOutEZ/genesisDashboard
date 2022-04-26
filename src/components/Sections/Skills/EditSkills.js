@@ -2,32 +2,32 @@ import {useState,useEffect} from "react";
 import EditSkillsForm from "./EditSkillsForm.jsx";
 import axios from 'axios';
 import authHeader from "../../services/auth-header";
-import { useHistory } from "react-router-dom";
+import { useHistory,useParams } from "react-router-dom";
 import { useAlert } from 'react-alert'
 const API_URL = "https://rest-api-portfolio-production.up.railway.app/";
 
 
 const EditSkills = () =>{
   const alert = useAlert()
-  let history = useHistory()	
-    const [mySkills, setMySkillsData] = useState();
-    const [error, seterrorData] = useState();
-  // useEffect(() => {
-  //   axios.get(API_URL + 'skills', { headers: authHeader() })
-  //     .then((response) => {
-  //       setMySkillsData(response.data)
-  //       console.log(response.data)
-  //     })
-  //     .catch((error) => {
-  //       console.log("Error is: " + error);
-  //     });
-  // }, []);
-
-  function AddASkill(arg){
-    console.log(arg)
-    axios.post(API_URL + 'skills',arg, { headers: authHeader() })
+  let history = useHistory()
+  const { id } = useParams();
+    const [mySkills, setMySkillsData] = useState({});
+  useEffect(() => {
+    axios.get(API_URL + 'skills/' + id, { headers: authHeader() })
       .then((response) => {
-        // setMySkillsData(response.data)
+        setMySkillsData(response.data)
+        console.log(response.data)
+      })
+      .catch((error) => {
+        console.log("Error is: " + error);
+      });
+  }, []);
+
+  function EditASkill(arg){
+    console.log(arg)
+    axios.put(API_URL + 'skills/' + id,arg, { headers: authHeader() })
+      .then((response) => {
+        setMySkillsData(response.data)
         alert.success("Lets Goooo!!")
         history.push("/admin/tables")
       })
@@ -38,7 +38,7 @@ const EditSkills = () =>{
 
     return(
         <div>
-        <EditSkillsForm formWidth={"12/12"} formName={"Create New Skill"} formTitle={"Skill Infos"} handleSubmit={AddASkill}/>
+        <EditSkillsForm formWidth={"12/12"} formName={"Create New Skill"} formTitle={"Skill Infos"} formElements={mySkills} handleSubmit={EditASkill}/>
         </div>
     )
 }

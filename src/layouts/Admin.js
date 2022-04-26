@@ -32,7 +32,7 @@ export default function Admin() {
             <Route path="/admin/settings" exact component={Settings} />
             <Route path="/admin/tables" exact component={Tables} />
             <Route path="/admin/skills/add" exact component={AddSkills} />
-            <Route path="/admin/skills/edit" exact component={EditSkills} />
+            <Route path="/admin/skills/edit/:id" exact component={EditSkills} />
             <Redirect from="/admin" to="/admin/dashboard" />
           </Switch>
           <FooterAdmin />
