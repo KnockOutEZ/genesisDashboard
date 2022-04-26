@@ -30,7 +30,8 @@ export default class Login extends Component {
           window.location.reload();
         },
         (error) => {
-          const resMessage =error.response
+          const resMessage =error.response.data.error
+          alert(resMessage)
         }
       );
   }
@@ -66,7 +67,7 @@ export default class Login extends Component {
                         name="email"
                         value={this.state.email}
                 onChange={this.onChangeEmail}
-                      />
+                required/>
                     </div>
 
                     <div className="relative w-full mb-3">
@@ -82,7 +83,7 @@ export default class Login extends Component {
                         placeholder="Password"
                         value={this.state.password}
                 onChange={this.onChangePassword}
-                      />
+                required/>
                     </div>
                     <div className="text-center mt-6">
                       <button
@@ -92,7 +93,7 @@ export default class Login extends Component {
                         {this.state.loading && (
                   <span className="spinner-border spinner-border-sm"></span>
                 )}
-                        Sign In
+                        Sign In 
                       </button>
                     </div>
                   </form>

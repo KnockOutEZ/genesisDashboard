@@ -84,7 +84,7 @@ export default class Register extends Component {
                         placeholder="name"
                         value={this.state.name}
                     onChange={this.onChangeName}
-                      />
+                    required/>
                     </div>
   
                     <div className="relative w-full mb-3">
@@ -102,7 +102,7 @@ export default class Register extends Component {
                     value={this.state.email}
                     onChange={this.onChangeEmail}
                         
-                      />
+                    required/>
                     </div>
   
                     <div className="relative w-full mb-3">
@@ -118,7 +118,7 @@ export default class Register extends Component {
                         placeholder="Password"
                         value={this.state.password}
                     onChange={this.onChangePassword}
-                      />
+                    required/>
                     </div>
   
                     <div className="text-center mt-6">
