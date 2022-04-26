@@ -107,19 +107,20 @@ export default function Form(props) {
                   />
                 </div>
                 </div>
+
                 <div className={`w-full lg:w-`+"6/12" +` px-4`}>
                 <div className="relative w-full mb-3">
                   <label
                     className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
                     htmlFor="grid-password"
                   >
-                    Age
+                    *Password
                   </label>
                   <input
-                    type="text"
+                    type="password"
                     className={"border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"}
-                    name="age"
-                    defaultValue={props.formElements.age}
+                    name="password"
+                    defaultValue=""
                   />
                 </div>
                 </div>
@@ -195,7 +196,7 @@ export default function Form(props) {
                     className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
                     htmlFor="grid-password"
                   >
-                    profile_icon (link/anchor tag)
+                    Profile Icon (link/anchor tag)
                   </label>
                   <input
                     type="text"
@@ -205,22 +206,24 @@ export default function Form(props) {
                   />
                 </div>
                 </div>
-<div className={`w-full lg:w-`+"6/12" +` px-4`}>
+
+                <div className={`w-full lg:w-`+"6/12" +` px-4`}>
                 <div className="relative w-full mb-3">
                   <label
                     className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
                     htmlFor="grid-password"
                   >
-                    New Password
+                    Age
                   </label>
                   <input
-                    type="password"
+                    type="text"
                     className={"border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"}
-                    name="password"
-                    defaultValue=""
+                    name="age"
+                    defaultValue={props.formElements.age}
                   />
                 </div>
                 </div>
+
 <div className={`w-full lg:w-`+"12/12" +` px-4`}>
                 <div className="relative w-full mb-3">
                   <label
