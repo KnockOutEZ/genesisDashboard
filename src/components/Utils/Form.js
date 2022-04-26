@@ -88,7 +88,7 @@ export default function Form(props) {
                     className={"border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"}
                     name="name"
                     defaultValue={props.formElements.name}
-                  />
+                    required/>
                 </div>
                 </div>
                 <div className={`w-full lg:w-`+"6/12" +` px-4`}>
@@ -104,7 +104,7 @@ export default function Form(props) {
                     className={"border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"}
                     name="email"
                     defaultValue={props.formElements.email}
-                  />
+                    required/>
                 </div>
                 </div>
 
@@ -117,11 +117,11 @@ export default function Form(props) {
                     *Password
                   </label>
                   <input
-                    type="password"
+                    type="text"
                     className={"border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"}
                     name="password"
                     defaultValue=""
-                  />
+                    required/>
                 </div>
                 </div>
 
