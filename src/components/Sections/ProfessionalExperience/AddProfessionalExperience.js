@@ -1,5 +1,5 @@
 import {useState,useEffect} from "react";
-import AddSkillsForm from "./AddProfessionalExperienceForm.js";
+import AddProfessionalExperienceForm from "./AddProfessionalExperienceForm.js";
 import axios from 'axios';
 import authHeader from "../../services/auth-header";
 import { useHistory } from "react-router-dom";
@@ -7,7 +7,7 @@ import { useAlert } from 'react-alert'
 const API_URL = "https://rest-api-portfolio-production.up.railway.app/";
 
 
-const AddSkills = () =>{
+const AddProfessionalExperience = () =>{
   const alert = useAlert()
   let history = useHistory()	
     const [mySkills, setMySkillsData] = useState();
@@ -23,9 +23,9 @@ const AddSkills = () =>{
   //     });
   // }, []);
 
-  function AddASkill(arg){
+  function AddAProfessionalExperience(arg){
     console.log(arg)
-    axios.post(API_URL + 'skills',arg, { headers: authHeader() })
+    axios.post(API_URL + 'professional',arg, { headers: authHeader() })
       .then((response) => {
         alert.success("Lets goooo!!")
         history.push("/admin/tables")
@@ -37,9 +37,9 @@ const AddSkills = () =>{
 
     return(
         <div>
-        <AddSkillsForm formWidth={"12/12"} formName={"Create New Skill"} formTitle={"Skill Infos"} handleSubmit={AddASkill}/>
+        <AddProfessionalExperienceForm formWidth={"12/12"} formName={"Create New Professional Experience"} formTitle={"Professional Experience Form Infos"} handleSubmit={AddAProfessionalExperience}/>
         </div>
     )
 }
 
-export default AddSkills;
+export default AddProfessionalExperience;

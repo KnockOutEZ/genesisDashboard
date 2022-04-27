@@ -1,5 +1,5 @@
 import {useState,useEffect} from "react";
-import EditSkillsForm from "./EditProfessionalExperienceForm.js";
+import EditProfessionalExperienceForm from "./EditProfessionalExperienceForm.js";
 import axios from 'axios';
 import authHeader from "../../services/auth-header";
 import { useHistory,useParams } from "react-router-dom";
@@ -7,15 +7,15 @@ import { useAlert } from 'react-alert'
 const API_URL = "https://rest-api-portfolio-production.up.railway.app/";
 
 
-const EditSkills = () =>{
+const EditProfessionalExperience = () =>{
   const alert = useAlert()
   let history = useHistory()
   const { id } = useParams();
-    const [mySkills, setMySkillsData] = useState({});
+    const [myExperience, setMyExperience] = useState({});
   useEffect(() => {
-    axios.get(API_URL + 'skills/' + id, { headers: authHeader() })
+    axios.get(API_URL + 'professional/' + id, { headers: authHeader() })
       .then((response) => {
-        setMySkillsData(response.data)
+        setMyExperience(response.data)
         console.log(response.data)
       })
       .catch((error) => {
@@ -23,11 +23,11 @@ const EditSkills = () =>{
       });
   }, []);
 
-  function EditASkill(arg){
+  function EditAProfessionalExperience(arg){
     console.log(arg)
-    axios.put(API_URL + 'skills/' + id,arg, { headers: authHeader() })
+    axios.put(API_URL + 'professional/' + id,arg, { headers: authHeader() })
       .then((response) => {
-        setMySkillsData(response.data)
+        setMyExperience(response.data)
         alert.success("Lets Goooo!!")
         history.push("/admin/tables")
       })
@@ -38,9 +38,9 @@ const EditSkills = () =>{
 
     return(
         <div>
-        <EditSkillsForm formWidth={"12/12"} formName={"Create New Skill"} formTitle={"Skill Infos"} formElements={mySkills} handleSubmit={EditASkill}/>
+        <EditProfessionalExperienceForm formWidth={"12/12"} formName={"Create New Professional Experience"} formTitle={"Professional Experience Infos"} formElements={myExperience} handleSubmit={EditAProfessionalExperience}/>
         </div>
     )
 }
 
-export default EditSkills;
+export default EditProfessionalExperience;
