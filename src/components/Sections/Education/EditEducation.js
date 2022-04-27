@@ -14,7 +14,7 @@ const AddEducation = () =>{
     const [myEducation, setmyEducationData] = useState({});
     const [error, seterrorData] = useState();
   useEffect(() => {
-    axios.get(API_URL + 'education/'+ id, { headers: authHeader() })
+    axios.get(API_URL + 'myeducation/'+ id, { headers: authHeader() })
       .then((response) => {
         setmyEducationData(response.data)
         console.log(response.data)

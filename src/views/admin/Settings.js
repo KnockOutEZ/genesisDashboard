@@ -10,7 +10,7 @@ const Settings = () => {
   const [userData, setUserData] = useState({});
   const alert = useAlert()
   useEffect(() => {
-    axios.get(API_URL + 'users/'+localStorage.getItem('userid'), { headers: authHeader() })
+    axios.get(API_URL + 'users/'+localStorage.getItem('userid'))
       .then((response) => {
         // alert.success("Lets goooo!!")
         setUserData(response.data);

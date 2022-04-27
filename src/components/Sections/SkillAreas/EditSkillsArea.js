@@ -13,7 +13,7 @@ const EditSkills = () =>{
   const { id } = useParams();
     const [mySkills, setMySkillsData] = useState({});
   useEffect(() => {
-    axios.get(API_URL + 'skills/' + id, { headers: authHeader() })
+    axios.get(API_URL + 'myskills/' + id, { headers: authHeader() })
       .then((response) => {
         setMySkillsData(response.data)
         console.log(response.data)
