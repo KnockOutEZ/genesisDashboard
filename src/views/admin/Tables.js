@@ -1,6 +1,7 @@
 import {useState,useEffect} from "react";
 import SkillsCardTable from "components/Sections/Skills/SkillsCardTable.js";
 import EducationCardTable from "components/Sections/Education/EducationCardTable.js";
+import HobbiesCardTable from "components/Sections/Hobbies/HobbiesCardTable.js";
 import axios from 'axios';
 import authHeader from "components/services/auth-header";
 const API_URL = "https://rest-api-portfolio-production.up.railway.app/";
@@ -10,6 +11,7 @@ const API_URL = "https://rest-api-portfolio-production.up.railway.app/";
 const Tables = () => {
   const [mySkills, setMySkillsData] = useState([]);
   const [MyEducation, setMyEducationData] = useState([]);
+  const [MyHobby, setMyHobbyData] = useState([]);
 
   useEffect(() => {
     axios.get(API_URL + 'myskills', { headers: authHeader() })
@@ -23,6 +25,14 @@ const Tables = () => {
       axios.get(API_URL + 'myeducation', { headers: authHeader() })
       .then((response) => {
         setMyEducationData(response.data)
+      })
+      .catch((error) => {
+        console.log("Error is: " + error);
+      });
+
+      axios.get(API_URL + 'myhobbies', { headers: authHeader() })
+      .then((response) => {
+        setMyHobbyData(response.data)
       })
       .catch((error) => {
         console.log("Error is: " + error);
@@ -49,6 +59,16 @@ const Tables = () => {
       });
   }
 
+  function deleteMyHobby(id){
+    axios.delete(API_URL + 'hobbies/' + id, { headers: authHeader() })
+      .then((response) => {
+        window.location.reload()
+      })
+      .catch((error) => {
+        console.log("Error is: " + error);
+      });
+  }
+
 
   return (
     <>
@@ -56,6 +76,7 @@ const Tables = () => {
         <div className="w-full mb-12 px-4">
           <SkillsCardTable color= {"light"} getData={mySkills} deleteMySkill={deleteMySkill}/>
           <EducationCardTable color= {"light"} getData={MyEducation} deleteMySkill={deleteMyEducation}/>
+          <HobbiesCardTable color= {"light"} getData={MyHobby} deleteMySkill={deleteMyHobby}/>
         </div>
         {/* <div className="w-full mb-12 px-4">
           <CardTable color="dark" />

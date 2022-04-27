@@ -1,15 +1,14 @@
 
-const AddSkillsForm = (props) => {
+const AddHobbiesForm = (props) => {
   let formData = {}
   const handleSubmit = (event) => {
     event.preventDefault()
     let data = formData
-    data.skill_name = event.target.elements.skill_name.value
-    data.skill_title = event.target.elements.skill_title.value
-    data.skill_progress = event.target.elements.skill_progress.value
-    data.skill_description = event.target.elements.skill_description.value
-    data.skill_links = event.target.elements.skill_links.value
-    data.skill_icon = event.target.elements.skill_icon.value
+    data.hobby_name = event.target.elements.hobby_name.value
+    data.hobby_title = event.target.elements.hobby_title.value
+    data.hobby_description = event.target.elements.hobby_description.value
+    data.hobby_icon = event.target.elements.hobby_icon.value
+    data.hobby_links = event.target.elements.hobby_links.value
     data.user_id = JSON.parse(localStorage.getItem('userid'))
     console.log(data)
     props.handleSubmit(data)
@@ -54,15 +53,15 @@ const AddSkillsForm = (props) => {
                         className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
                         htmlFor="grid-password"
                       >
-                        Skill Name
+                        Hobby Name
                       </label>
                       <input
                         type="text"
                         className={
                           "border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                         }
-                        name="skill_name"
-                        // defaultValue={props.formElements.skill_name}
+                        name="hobby_name"
+                        // defaultValue={props.formElements.hobby_name}
                       />
                     </div>
                   </div>
@@ -72,15 +71,15 @@ const AddSkillsForm = (props) => {
                         className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
                         htmlFor="grid-password"
                       >
-                        Skill Title
+                        Hobby Title
                       </label>
                       <input
                         type="text"
                         className={
                           "border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                         }
-                        name="skill_title"
-                        // defaultValue={props.formElements.skill_title}
+                        name="hobby_title"
+                        // defaultValue={props.formElements.hobby_title}
                       />
                     </div>
                   </div>
@@ -91,15 +90,15 @@ const AddSkillsForm = (props) => {
                         className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
                         htmlFor="grid-password"
                       >
-                        Progress
+                        Hobby Description
                       </label>
                       <input
                         type="text"
                         className={
                           "border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                         }
-                        name="skill_progress"
-                        // defaultValue={props.formElements.skill_progress}
+                        name="hobby_description"
+                        // defaultValue={props.formElements.hobby_description}
                       />
                     </div>
                   </div>
@@ -109,15 +108,15 @@ const AddSkillsForm = (props) => {
                         className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
                         htmlFor="grid-password"
                       >
-                        Skill Link
+                        Hobby Link
                       </label>
                       <input
                         type="text"
                         className={
                           "border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                         }
-                        name="skill_links"
-                        // defaultValue={props.formElements.skill_links}
+                        name="hobby_links"
+                        // defaultValue={props.formElements.hobby_links}
                       />
                     </div>
                   </div>
@@ -127,31 +126,13 @@ const AddSkillsForm = (props) => {
                         className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
                         htmlFor="grid-password"
                       >
-                        Skill Image/Icon (link)
-                      </label>
-                      <input
-                        type="text"
-                        className={
-                          "border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-                        }
-                        name="skill_icon"
-                        // defaultValue={props.formElements.skill_icon}
-                      />
-                    </div>
-                  </div>
-                  <div className={`w-full lg:w-` + "12/12" + ` px-4`}>
-                    <div className="relative w-full mb-3">
-                      <label
-                        className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
-                        htmlFor="grid-password"
-                      >
-                        Skill Description
+                        Hobby Icon/Image (Link)
                       </label>
                       <textarea
                         type="text"
                         className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-                        name="skill_description"
-                        // defaultValue={props.formElements.skill_description}
+                        name="hobby_icon"
+                        // defaultValue={props.formElements.hobby_icon}
                         rows="4"
                       />
                     </div>
@@ -165,4 +146,4 @@ const AddSkillsForm = (props) => {
   );
 };
 
-export default AddSkillsForm;
+export default AddHobbiesForm;

@@ -17,8 +17,8 @@ import AddSkills from "components/Sections/Skills/AddSkills";
 import EditSkills from "components/Sections/Skills/EditSkills";
 // import AddSkillsArea from "components/Sections/SkillsArea/AddSkillsArea";
 // import EditSkillsArea from "components/Sections/SkillsArea/EditSkillsArea";
-// import AddHobbies from "components/Sections/Hobbies/AddHobbies";
-// import EditHobbies from "components/Sections/Hobbies/EditHobbies";
+import AddHobbies from "components/Sections/Hobbies/AddHobbies";
+import EditHobbies from "components/Sections/Hobbies/EditHobbies";
 import AddEducation from "components/Sections/Education/AddEducation";
 import EditEducation from "components/Sections/Education/EditEducation";
 // import AddProfessionalExperience from "components/Sections/ProfessionalExperience/AddProfessionalExperience";
@@ -46,12 +46,13 @@ export default function Admin() {
             <Route path="/admin/skills/edit/:id" exact component={EditSkills} />
             <Route path="/admin/education/add" exact component={AddEducation} />
             <Route path="/admin/education/edit/:id" exact component={EditEducation} />
+            <Route path="/admin/hobbies/add" exact component={AddHobbies} />
+            <Route path="/admin/hobbies/edit/:id" exact component={EditHobbies} />
             {/* <Route path="/admin/skillsareas/add" exact component={AddSkillsArea} />
             <Route path="/admin/skillsareas/edit/:id" exact component={EditSkillsArea} />
             <Route path="/admin/projects/add" exact component={AddProjects} />
             <Route path="/admin/projects/edit/:id" exact component={EditProjects} />
-            <Route path="/admin/hobbies/add" exact component={AddHobbies} />
-            <Route path="/admin/hobbies/edit/:id" exact component={EditHobbies} />
+            
             <Route path="/admin/sociallinks/add" exact component={AddSocialLinks} />
             <Route path="/admin/sociallinks/edit/:id" exact component={EditSocialLinks} />
             <Route path="/admin/professionalexperience/add" exact component={AddProfessionalExperience} />

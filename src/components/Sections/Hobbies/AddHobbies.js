@@ -1,5 +1,5 @@
 import {useState,useEffect} from "react";
-import AddSkillsForm from "./AddHobbiesForm.jsx";
+import AddHobbiesForm from "./AddHobbiesForm.jsx";
 import axios from 'axios';
 import authHeader from "../../services/auth-header";
 import { useHistory } from "react-router-dom";
@@ -7,15 +7,15 @@ import { useAlert } from 'react-alert'
 const API_URL = "https://rest-api-portfolio-production.up.railway.app/";
 
 
-const AddSkills = () =>{
+const AddHobbies = () =>{
   const alert = useAlert()
   let history = useHistory()	
-    const [mySkills, setMySkillsData] = useState();
+    const [myHobbies, setmyHobbiesData] = useState();
     const [error, seterrorData] = useState();
   // useEffect(() => {
-  //   axios.get(API_URL + 'skills', { headers: authHeader() })
+  //   axios.get(API_URL + 'hobbies', { headers: authHeader() })
   //     .then((response) => {
-  //       setMySkillsData(response.data)
+  //       setmyHobbiesData(response.data)
   //       console.log(response.data)
   //     })
   //     .catch((error) => {
@@ -23,9 +23,9 @@ const AddSkills = () =>{
   //     });
   // }, []);
 
-  function AddASkill(arg){
+  function AddAHobby(arg){
     console.log(arg)
-    axios.post(API_URL + 'skills',arg, { headers: authHeader() })
+    axios.post(API_URL + 'hobbies',arg, { headers: authHeader() })
       .then((response) => {
         alert.success("Lets goooo!!")
         history.push("/admin/tables")
@@ -37,9 +37,9 @@ const AddSkills = () =>{
 
     return(
         <div>
-        <AddSkillsForm formWidth={"12/12"} formName={"Create New Skill"} formTitle={"Skill Infos"} handleSubmit={AddASkill}/>
+        <AddHobbiesForm formWidth={"12/12"} formName={"Create New Hobby"} formTitle={"Hobby Infos"} handleSubmit={AddAHobby}/>
         </div>
     )
 }
 
-export default AddSkills;
+export default AddHobbies;
