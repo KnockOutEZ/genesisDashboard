@@ -7,7 +7,7 @@ const EditProfessionalExperience = (props) => {
     data.institution_name = event.target.elements.institution_name.value
     data.institution_title = event.target.elements.institution_title.value
     data.institution_description = event.target.elements.institution_description.value
-    data.institution_links = event.target.elements.institution_links.value
+    data.institution_link = event.target.elements.institution_link.value
     data.responsibility_level = event.target.elements.responsibility_level.value
     data.job_experience_from = event.target.elements.job_experience_from.value
     data.job_experience_to = event.target.elements.job_experience_to.value
@@ -100,8 +100,8 @@ const EditProfessionalExperience = (props) => {
                         className={
                           "border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                         }
-                        name="institution_links"
-                        defaultValue={props.formElements.institution_links}
+                        name="institution_link"
+                        defaultValue={props.formElements.institution_link}
                       />
                     </div>
                   </div>
