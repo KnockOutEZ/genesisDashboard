@@ -1,5 +1,5 @@
 import {useState,useEffect} from "react";
-import EditSkillsForm from "./EditProjectsForm.jsx";
+import EditProjectForm from "./EditProjectsForm.jsx";
 import axios from 'axios';
 import authHeader from "../../services/auth-header";
 import { useHistory,useParams } from "react-router-dom";
@@ -7,15 +7,16 @@ import { useAlert } from 'react-alert'
 const API_URL = "https://rest-api-portfolio-production.up.railway.app/";
 
 
-const EditSkills = () =>{
+const AddProjects = () =>{
   const alert = useAlert()
-  let history = useHistory()
+  let history = useHistory()	
   const { id } = useParams();
-    const [mySkills, setMySkillsData] = useState({});
+    const [myProjects, setmyProjectsData] = useState({});
+    const [error, seterrorData] = useState();
   useEffect(() => {
-    axios.get(API_URL + 'skills/' + id, { headers: authHeader() })
+    axios.get(API_URL + 'projects/'+ id, { headers: authHeader() })
       .then((response) => {
-        setMySkillsData(response.data)
+        setmyProjectsData(response.data)
         console.log(response.data)
       })
       .catch((error) => {
@@ -23,12 +24,11 @@ const EditSkills = () =>{
       });
   }, []);
 
-  function EditASkill(arg){
+  function EditProjects(arg){
     console.log(arg)
-    axios.put(API_URL + 'skills/' + id,arg, { headers: authHeader() })
+    axios.put(API_URL + 'projects/'+ id,arg, { headers: authHeader() })
       .then((response) => {
-        setMySkillsData(response.data)
-        alert.success("Lets Goooo!!")
+        alert.success("Lets goooo!!")
         history.push("/admin/tables")
       })
       .catch((error) => {
@@ -38,9 +38,9 @@ const EditSkills = () =>{
 
     return(
         <div>
-        <EditSkillsForm formWidth={"12/12"} formName={"Create New Skill"} formTitle={"Skill Infos"} formElements={mySkills} handleSubmit={EditASkill}/>
+        <EditProjectForm formWidth={"12/12"} formName={"Edit Project"} formTitle={"Project Infos"} formElements= {myProjects} handleSubmit={EditProjects}/>
         </div>
     )
 }
 
-export default EditSkills;
+export default AddProjects;

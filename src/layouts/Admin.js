@@ -23,8 +23,8 @@ import AddEducation from "components/Sections/Education/AddEducation";
 import EditEducation from "components/Sections/Education/EditEducation";
 import AddProfessionalExperience from "components/Sections/ProfessionalExperience/AddProfessionalExperience";
 import EditProfessionalExperience from "components/Sections/ProfessionalExperience/EditProfessionalExperience";
-// import AddProjects from "components/Sections/Projects/AddProjects";
-// import EditProjects from "components/Sections/Projects/EditProjects";
+import AddProjects from "components/Sections/Projects/AddProjects";
+import EditProjects from "components/Sections/Projects/EditProjects";
 // import AddSocialLinks from "components/Sections/SocialLinks/AddSocialLinks";
 // import EditSocialLinks from "components/Sections/SocialLinks/EditSocialLinks";
 
@@ -50,10 +50,11 @@ export default function Admin() {
             <Route path="/admin/hobbies/edit/:id" exact component={EditHobbies} />
             <Route path="/admin/professionalexperience/add" exact component={AddProfessionalExperience} />
             <Route path="/admin/professionalexperience/edit/:id" exact component={EditProfessionalExperience} />
-            {/* <Route path="/admin/skillsareas/add" exact component={AddSkillsArea} />
-            <Route path="/admin/skillsareas/edit/:id" exact component={EditSkillsArea} />
             <Route path="/admin/projects/add" exact component={AddProjects} />
             <Route path="/admin/projects/edit/:id" exact component={EditProjects} />
+            {/* <Route path="/admin/skillsareas/add" exact component={AddSkillsArea} />
+            <Route path="/admin/skillsareas/edit/:id" exact component={EditSkillsArea} />
+            
             
             <Route path="/admin/sociallinks/add" exact component={AddSocialLinks} />
             <Route path="/admin/sociallinks/edit/:id" exact component={EditSocialLinks} />

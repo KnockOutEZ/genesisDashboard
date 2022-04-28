@@ -29,7 +29,7 @@ const AddProfessionalExperience = (props) => {
                 </h6>
                 <div>
                   <button
-                    form="skills-add-form"
+                    form="professionalexp-add-form"
                     className="bg-lightBlue-500 text-white active:bg-lightBlue-600 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 ease-linear transition-all duration-150"
                     type="submit"
                   >
@@ -46,7 +46,7 @@ const AddProfessionalExperience = (props) => {
               </div>
             </div>
             <div className="flex-auto px-4 lg:px-10 py-10 pt-0">
-              <form id="skills-add-form" onSubmit={handleSubmit}>
+              <form id="professionalexp-add-form" onSubmit={handleSubmit}>
                 <h6 className="text-blueGray-400 text-sm mt-3 mb-6 font-bold uppercase">
                   {props.formTitle}
                 </h6>
