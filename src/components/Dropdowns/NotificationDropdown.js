@@ -20,7 +20,7 @@ const NotificationDropdown = () => {
     <>
       <a
         className="text-blueGray-500 block py-1 px-3"
-        href="#pablo"
+        href=""
         ref={btnDropdownRef}
         onClick={(e) => {
           e.preventDefault();
@@ -37,7 +37,7 @@ const NotificationDropdown = () => {
         }
       >
         <a
-          href="#pablo"
+          href=""
           className={
             "text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
           }
@@ -46,7 +46,7 @@ const NotificationDropdown = () => {
           Action
         </a>
         <a
-          href="#pablo"
+          href=""
           className={
             "text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
           }
@@ -55,7 +55,7 @@ const NotificationDropdown = () => {
           Another action
         </a>
         <a
-          href="#pablo"
+          href=""
           className={
             "text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
           }
@@ -65,7 +65,7 @@ const NotificationDropdown = () => {
         </a>
         <div className="h-0 my-2 border border-solid border-blueGray-100" />
         <a
-          href="#pablo"
+          href=""
           className={
             "text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
           }
