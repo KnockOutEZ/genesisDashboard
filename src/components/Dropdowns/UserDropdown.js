@@ -1,13 +1,30 @@
-import React from "react";
 import { createPopper } from "@popperjs/core";
 import { Link } from "react-router-dom";
 import AuthService from "../../components/services/auth.services";
+import { data } from "autoprefixer";
+import React,{useState, useEffect } from "react";
+import axios from 'axios';
+import { useAlert } from 'react-alert'
+const API_URL = "https://rest-api-portfolio-production.up.railway.app/";
 
 const UserDropdown = () => {
   // dropdown props
   const [dropdownPopoverShow, setDropdownPopoverShow] = React.useState(false);
   const btnDropdownRef = React.createRef();
   const popoverDropdownRef = React.createRef();
+  const [userdata, setUserData] = useState({});
+  const alert = useAlert()
+  useEffect(() => {
+    axios.get(API_URL + 'users/'+localStorage.getItem('userid'))
+      .then((response) => {
+        // alert.success("Lets goooo!!")
+        setUserData(response.data);
+        
+      })
+      .catch((error) => {
+        alert.error(error.response.data.error)
+      });
+  }, []);
   const openDropdownPopover = () => {
     createPopper(btnDropdownRef.current, popoverDropdownRef.current, {
       placement: "bottom-start",
@@ -28,15 +45,22 @@ const UserDropdown = () => {
           dropdownPopoverShow ? closeDropdownPopover() : openDropdownPopover();
         }}
       >
+
         <div className="items-center flex">
           <span className="w-12 h-12 text-sm text-white bg-blueGray-200 inline-flex items-center justify-center rounded-full">
             <img
-              alt="..."
-              className="w-full rounded-full align-middle border-none shadow-lg"
-              src={require("assets/img/team-1-800x800.jpg").default}
+              alt=""
+              className="w-full rounded-full  align-middle border-none shadow-lg"
+              src={userdata.profile_icon}
+              onError={({ currentTarget }) => {
+                currentTarget.onerror = null; // prevents looping
+                currentTarget.src="/main.png"
+              }}
             />
           </span>
         </div>
+        
+        
       </a>
       <div
         ref={popoverDropdownRef}

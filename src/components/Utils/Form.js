@@ -1,5 +1,6 @@
 import {React,useState} from "react";
 import axios from 'axios';
+import { useHistory } from "react-router-dom";
 import authHeader from '../../components/services/auth-header';
 import { useAlert } from 'react-alert'
 const API_URL = "https://rest-api-portfolio-production.up.railway.app/";
@@ -7,6 +8,7 @@ const API_URL = "https://rest-api-portfolio-production.up.railway.app/";
 
 export default function Form(props) {
   const alert = useAlert()
+  let history = useHistory()	
   let formData = props.formElements
   const handleSubmit = (event) => {
     event.preventDefault()
@@ -35,6 +37,7 @@ export default function Form(props) {
     axios.put(API_URL + 'users/'+localStorage.getItem('userid'),formData, { headers: authHeader() })
     .then(response =>{
         alert.success("Lets goooo!!")
+        history.push("/profile");
       // localStorage.removeItem("user");
       // localStorage.removeItem("userid");
       // window.location.reload()
