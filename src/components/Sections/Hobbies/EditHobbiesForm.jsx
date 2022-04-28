@@ -25,7 +25,7 @@ const EditHobbiesForm = (props) => {
                 </h6>
                 <div>
                   <button
-                    form="hobby-edit-form"
+                    form="hobby-add-form"
                     className="bg-lightBlue-500 text-white active:bg-lightBlue-600 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 ease-linear transition-all duration-150"
                     type="submit"
                   >
@@ -42,7 +42,7 @@ const EditHobbiesForm = (props) => {
               </div>
             </div>
             <div className="flex-auto px-4 lg:px-10 py-10 pt-0">
-              <form id="hobby-edit-form" onSubmit={handleSubmit}>
+              <form id="hobby-add-form" onSubmit={handleSubmit}>
                 <h6 className="text-blueGray-400 text-sm mt-3 mb-6 font-bold uppercase">
                   {props.formTitle}
                 </h6>
@@ -90,15 +90,15 @@ const EditHobbiesForm = (props) => {
                         className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
                         htmlFor="grid-password"
                       >
-                        Hobby Description
+                        Hobby Icon/Image (Link)
                       </label>
                       <input
                         type="text"
                         className={
                           "border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                         }
-                        name="hobby_description"
-                        defaultValue={props.formElements.hobby_description}
+                        name="hobby_icon"
+                        defaultValue={props.formElements.hobby_icon}
                       />
                     </div>
                   </div>
@@ -126,13 +126,13 @@ const EditHobbiesForm = (props) => {
                         className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
                         htmlFor="grid-password"
                       >
-                        Hobby Icon/Image (Link)
+                        Hobby Description
                       </label>
                       <textarea
                         type="text"
                         className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-                        name="hobby_icon"
-                        defaultValue={props.formElements.hobby_icon}
+                        name="hobby_description"
+                        defaultValue={props.formElements.hobby_description}
                         rows="4"
                       />
                     </div>

@@ -38,7 +38,7 @@ const EditProfessionalExperience = () =>{
 
     return(
         <div>
-        <EditProfessionalExperienceForm formWidth={"12/12"} formName={"Create New Professional Experience"} formTitle={"Professional Experience Infos"} formElements={myExperience} handleSubmit={EditAProfessionalExperience}/>
+        <EditProfessionalExperienceForm formWidth={"12/12"} formName={"Edit Professional Experience Data"} formTitle={"Professional Experience Infos"} formElements={myExperience} handleSubmit={EditAProfessionalExperience}/>
         </div>
     )
 }

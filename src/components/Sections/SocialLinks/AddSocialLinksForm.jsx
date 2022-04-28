@@ -1,15 +1,14 @@
 
-const AddSkillsForm = (props) => {
+const AddSocialLinksForm = (props) => {
   let formData = {}
   const handleSubmit = (event) => {
     event.preventDefault()
     let data = formData
-    data.skill_name = event.target.elements.skill_name.value
-    data.skill_title = event.target.elements.skill_title.value
-    data.skill_progress = event.target.elements.skill_progress.value
-    data.skill_description = event.target.elements.skill_description.value
-    data.skill_links = event.target.elements.skill_links.value
-    data.skill_icon = event.target.elements.skill_icon.value
+    data.social_name = event.target.elements.social_name.value
+    data.social_title = event.target.elements.social_title.value
+    data.social_description = event.target.elements.social_description.value
+    data.social_links = event.target.elements.social_links.value
+    data.social_icon = event.target.elements.social_icon.value
     data.user_id = JSON.parse(localStorage.getItem('userid'))
     console.log(data)
     props.handleSubmit(data)
@@ -26,7 +25,7 @@ const AddSkillsForm = (props) => {
                 </h6>
                 <div>
                   <button
-                    form="skills-add-form"
+                    form="socials-add-form"
                     className="bg-lightBlue-500 text-white active:bg-lightBlue-600 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 ease-linear transition-all duration-150"
                     type="submit"
                   >
@@ -43,7 +42,7 @@ const AddSkillsForm = (props) => {
               </div>
             </div>
             <div className="flex-auto px-4 lg:px-10 py-10 pt-0">
-              <form id="skills-add-form" onSubmit={handleSubmit}>
+              <form id="socials-add-form" onSubmit={handleSubmit}>
                 <h6 className="text-blueGray-400 text-sm mt-3 mb-6 font-bold uppercase">
                   {props.formTitle}
                 </h6>
@@ -54,15 +53,15 @@ const AddSkillsForm = (props) => {
                         className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
                         htmlFor="grid-password"
                       >
-                        Skill Name
+                        Social Link Name
                       </label>
                       <input
                         type="text"
                         className={
                           "border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                         }
-                        name="skill_name"
-                        // defaultValue={props.formElements.skill_name}
+                        name="social_name"
+                        // defaultValue={props.formElements.social_name}
                       />
                     </div>
                   </div>
@@ -72,15 +71,15 @@ const AddSkillsForm = (props) => {
                         className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
                         htmlFor="grid-password"
                       >
-                        Skill Title
+                        Social Link Title
                       </label>
                       <input
                         type="text"
                         className={
                           "border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                         }
-                        name="skill_title"
-                        // defaultValue={props.formElements.skill_title}
+                        name="social_title"
+                        // defaultValue={props.formElements.social_title}
                       />
                     </div>
                   </div>
@@ -91,15 +90,15 @@ const AddSkillsForm = (props) => {
                         className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
                         htmlFor="grid-password"
                       >
-                        Progress
+                        Social Link Link
                       </label>
                       <input
                         type="text"
                         className={
                           "border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                         }
-                        name="skill_progress"
-                        // defaultValue={props.formElements.skill_progress}
+                        name="social_links"
+                        // defaultValue={props.formElements.social_links}
                       />
                     </div>
                   </div>
@@ -109,15 +108,15 @@ const AddSkillsForm = (props) => {
                         className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
                         htmlFor="grid-password"
                       >
-                        Skill Link
+                        Social Link Image/Icon (link)
                       </label>
                       <input
                         type="text"
                         className={
                           "border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                         }
-                        name="skill_links"
-                        // defaultValue={props.formElements.skill_links}
+                        name="social_icon"
+                        // defaultValue={props.formElements.social_icon}
                       />
                     </div>
                   </div>
@@ -127,31 +126,13 @@ const AddSkillsForm = (props) => {
                         className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
                         htmlFor="grid-password"
                       >
-                        Skill Image/Icon (link)
-                      </label>
-                      <input
-                        type="text"
-                        className={
-                          "border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-                        }
-                        name="skill_icon"
-                        // defaultValue={props.formElements.skill_icon}
-                      />
-                    </div>
-                  </div>
-                  <div className={`w-full lg:w-` + "12/12" + ` px-4`}>
-                    <div className="relative w-full mb-3">
-                      <label
-                        className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
-                        htmlFor="grid-password"
-                      >
-                        Skill Description
+                        Social Link Description
                       </label>
                       <textarea
                         type="text"
                         className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-                        name="skill_description"
-                        // defaultValue={props.formElements.skill_description}
+                        name="social_description"
+                        // defaultValue={props.formElements.social_description}
                         rows="4"
                       />
                     </div>
@@ -165,4 +146,4 @@ const AddSkillsForm = (props) => {
   );
 };
 
-export default AddSkillsForm;
+export default AddSocialLinksForm;

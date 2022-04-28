@@ -6,7 +6,7 @@ import PropTypes from "prop-types";
 import TableDropdown from "./TableDropdown";
 import { Link } from "react-router-dom";
 
-export default function SkillsCardTable( props ) {
+export default function SkillsAreaCardTable( props ) {
   return (
     <>
       <div
@@ -24,13 +24,13 @@ export default function SkillsCardTable( props ) {
                   (props.color === "light" ? "text-blueGray-700" : "text-white")
                 }
               >
-                Skills
+                Skills Area
               </h3>
             </div>
             <div className="relative w-full px-4 max-w-full flex-grow flex-1 text-right">
               <Link
                 className="bg-indigo-500 text-white active:bg-indigo-600 text-xs font-bold uppercase px-3 py-1 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-                to="/admin/skills/add"
+                to="/admin/skillsarea/add"
               >
                 Create
               </Link>
@@ -50,7 +50,7 @@ export default function SkillsCardTable( props ) {
                       : "bg-lightBlue-800 text-lightBlue-300 border-lightBlue-700")
                   }
                 >
-                  Skill Name
+                  Skill Area Name
                 </th>
                 <th
                   className={
@@ -60,7 +60,7 @@ export default function SkillsCardTable( props ) {
                       : "bg-lightBlue-800 text-lightBlue-300 border-lightBlue-700")
                   }
                 >
-                  Skill Title
+                  Skill Area Title
                 </th>
                 <th
                   className={
@@ -120,7 +120,7 @@ export default function SkillsCardTable( props ) {
               <tr>
                 <th className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-wrap p-4 text-left flex items-center">
                   <img
-                    src={data.skill_icon}
+                    src={data.skill_area_icon}
                     className="h-12 w-12 bg-white rounded-full border"
                     alt="..."
                   ></img>{" "}
@@ -130,14 +130,14 @@ export default function SkillsCardTable( props ) {
                       +(props.color === "light" ? "text-blueGray-600" : "text-white")
                     }
                   >
-                    {data.skill_name}
+                    {data.skill_area_name}
                   </span>
                 </th>
                 <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-wrap p-4">
-                {data.skill_title}
+                {data.skill_area_title}
                 </td>
                 <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-wrap text-ellipsis p-4">
-                {data.skill_description}
+                {data.skill_area_description}
 
                 </td>
                 {/* <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-wrap p-4">
@@ -145,11 +145,11 @@ export default function SkillsCardTable( props ) {
                 </td> */}
                 <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-wrap p-4">
                   <div className="flex items-center">
-                    <span className="mr-2">{data.skill_progress}</span>
+                    <span className="mr-2">{data.skill_area_progress}</span>
                     <div className="relative w-full">
                       <div className="overflow-hidden h-2 text-xs flex rounded bg-red-200">
                         <div
-                          style={{ width: data.skill_progress }}
+                          style={{ width: data.skill_area_progress }}
                           className="shadow-none flex flex-col text-center whitespace-wrap text-white justify-center bg-red-500"
                         ></div>
                       </div>
@@ -157,7 +157,7 @@ export default function SkillsCardTable( props ) {
                   </div>
                 </td>
                 <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-wrap p-4">
-                <a href={data.skill_links} target="_blank">{data.skill_links}</a>
+                <a href={data.skill_area_links} target="_blank">{data.skill_area_links}</a>
                 </td>
                 <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-wrap p-4 text-right">
                   <TableDropdown deleteFunc={props.deleteMySkill} id = {data.id}/>
@@ -173,10 +173,10 @@ export default function SkillsCardTable( props ) {
   );
 }
 
-SkillsCardTable.defaultProps = {
+SkillsAreaCardTable.defaultProps = {
   color: "light",
 };
 
-SkillsCardTable.propTypes = {
+SkillsAreaCardTable.propTypes = {
   color: PropTypes.oneOf(["light", "dark"]),
 };

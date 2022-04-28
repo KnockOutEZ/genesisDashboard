@@ -160,7 +160,7 @@ export default function Sidebar() {
 
               <li className="inline-flex">
                 <Link
-                  to="/admin/skillsareas"
+                  to="/admin/skillsarea"
                   className="text-blueGray-700 hover:text-blueGray-500 text-sm block mb-4 no-underline font-semibold"
                 >
                   <i className="fas fa-adjust mr-2 text-blueGray-300 text-base"></i>

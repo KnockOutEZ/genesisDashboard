@@ -38,7 +38,7 @@ const AddEducation = () =>{
 
     return(
         <div>
-        <EditEducationForm formWidth={"12/12"} formName={"Create New Educational Detail"} formElements= {myEducation} formTitle={"Education Infos"} handleSubmit={EditAndEducation}/>
+        <EditEducationForm formWidth={"12/12"} formName={"Edit Educational Detail"} formElements= {myEducation} formTitle={"Education Infos"} handleSubmit={EditAndEducation}/>
         </div>
     )
 }

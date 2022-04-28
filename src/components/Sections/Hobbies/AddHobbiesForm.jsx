@@ -90,15 +90,15 @@ const AddHobbiesForm = (props) => {
                         className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
                         htmlFor="grid-password"
                       >
-                        Hobby Description
+                        Hobby Icon/Image (Link)
                       </label>
                       <input
                         type="text"
                         className={
                           "border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                         }
-                        name="hobby_description"
-                        // defaultValue={props.formElements.hobby_description}
+                        name="hobby_icon"
+                        // defaultValue={props.formElements.hobby_icon}
                       />
                     </div>
                   </div>
@@ -126,13 +126,13 @@ const AddHobbiesForm = (props) => {
                         className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
                         htmlFor="grid-password"
                       >
-                        Hobby Icon/Image (Link)
+                        Hobby Description
                       </label>
                       <textarea
                         type="text"
                         className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-                        name="hobby_icon"
-                        // defaultValue={props.formElements.hobby_icon}
+                        name="hobby_description"
+                        // defaultValue={props.formElements.hobby_description}
                         rows="4"
                       />
                     </div>

@@ -15,8 +15,8 @@ import Settings from "views/admin/Settings.js";
 import Tables from "views/admin/Tables.js";
 import AddSkills from "components/Sections/Skills/AddSkills";
 import EditSkills from "components/Sections/Skills/EditSkills";
-// import AddSkillsArea from "components/Sections/SkillsArea/AddSkillsArea";
-// import EditSkillsArea from "components/Sections/SkillsArea/EditSkillsArea";
+import AddSkillsArea from "components/Sections/SkillAreas/AddSkillsArea";
+import EditSkillsArea from "components/Sections/SkillAreas/EditSkillsArea";
 import AddHobbies from "components/Sections/Hobbies/AddHobbies";
 import EditHobbies from "components/Sections/Hobbies/EditHobbies";
 import AddEducation from "components/Sections/Education/AddEducation";
@@ -25,8 +25,8 @@ import AddProfessionalExperience from "components/Sections/ProfessionalExperienc
 import EditProfessionalExperience from "components/Sections/ProfessionalExperience/EditProfessionalExperience";
 import AddProjects from "components/Sections/Projects/AddProjects";
 import EditProjects from "components/Sections/Projects/EditProjects";
-// import AddSocialLinks from "components/Sections/SocialLinks/AddSocialLinks";
-// import EditSocialLinks from "components/Sections/SocialLinks/EditSocialLinks";
+import AddSocialLinks from "components/Sections/SocialLinks/AddSocialLinks";
+import EditSocialLinks from "components/Sections/SocialLinks/EditSocialLinks";
 
 export default function Admin() {
   return (
@@ -52,13 +52,11 @@ export default function Admin() {
             <Route path="/admin/professionalexperience/edit/:id" exact component={EditProfessionalExperience} />
             <Route path="/admin/projects/add" exact component={AddProjects} />
             <Route path="/admin/projects/edit/:id" exact component={EditProjects} />
-            {/* <Route path="/admin/skillsareas/add" exact component={AddSkillsArea} />
-            <Route path="/admin/skillsareas/edit/:id" exact component={EditSkillsArea} />
-            
-            
+            <Route path="/admin/skillsarea/add" exact component={AddSkillsArea} />
+            <Route path="/admin/skillsarea/edit/:id" exact component={EditSkillsArea} />
             <Route path="/admin/sociallinks/add" exact component={AddSocialLinks} />
             <Route path="/admin/sociallinks/edit/:id" exact component={EditSocialLinks} />
-             */}
+            
             
             <Redirect from="/admin" to="/admin/dashboard" />
           </Switch>

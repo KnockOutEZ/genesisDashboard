@@ -1,5 +1,5 @@
 import {useState,useEffect} from "react";
-import EditSkillsForm from "./EditSkillsAreaForm.jsx";
+import EditSkillsAreaForm from "./EditSkillsAreaForm.jsx";
 import axios from 'axios';
 import authHeader from "../../services/auth-header";
 import { useHistory,useParams } from "react-router-dom";
@@ -7,15 +7,15 @@ import { useAlert } from 'react-alert'
 const API_URL = "https://rest-api-portfolio-production.up.railway.app/";
 
 
-const EditSkills = () =>{
+const EditSkillsArea = () =>{
   const alert = useAlert()
   let history = useHistory()
   const { id } = useParams();
-    const [mySkills, setMySkillsData] = useState({});
+    const [mySkillsArea, setMySkillsAreaData] = useState({});
   useEffect(() => {
-    axios.get(API_URL + 'myskills/' + id, { headers: authHeader() })
+    axios.get(API_URL + 'skillareas/' + id, { headers: authHeader() })
       .then((response) => {
-        setMySkillsData(response.data)
+        setMySkillsAreaData(response.data)
         console.log(response.data)
       })
       .catch((error) => {
@@ -23,11 +23,11 @@ const EditSkills = () =>{
       });
   }, []);
 
-  function EditASkill(arg){
+  function EditASkillArea(arg){
     console.log(arg)
-    axios.put(API_URL + 'skills/' + id,arg, { headers: authHeader() })
+    axios.put(API_URL + 'skillareas/' + id,arg, { headers: authHeader() })
       .then((response) => {
-        setMySkillsData(response.data)
+        setMySkillsAreaData(response.data)
         alert.success("Lets Goooo!!")
         history.push("/admin/tables")
       })
@@ -38,9 +38,9 @@ const EditSkills = () =>{
 
     return(
         <div>
-        <EditSkillsForm formWidth={"12/12"} formName={"Create New Skill"} formTitle={"Skill Infos"} formElements={mySkills} handleSubmit={EditASkill}/>
+        <EditSkillsAreaForm formWidth={"12/12"} formName={"Edit Skill Area"} formTitle={"Skill Area Infos"} formElements={mySkillsArea} handleSubmit={EditASkillArea}/>
         </div>
     )
 }
 
-export default EditSkills;
+export default EditSkillsArea;

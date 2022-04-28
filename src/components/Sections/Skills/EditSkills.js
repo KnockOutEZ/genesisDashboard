@@ -13,7 +13,7 @@ const EditSkills = () =>{
   const { id } = useParams();
     const [mySkills, setMySkillsData] = useState({});
   useEffect(() => {
-    axios.get(API_URL + 'myskills/' + id, { headers: authHeader() })
+    axios.get(API_URL + 'skills/' + id, { headers: authHeader() })
       .then((response) => {
         setMySkillsData(response.data)
         console.log(response.data)
@@ -38,7 +38,7 @@ const EditSkills = () =>{
 
     return(
         <div>
-        <EditSkillsForm formWidth={"12/12"} formName={"Create New Skill"} formTitle={"Skill Infos"} formElements={mySkills} handleSubmit={EditASkill}/>
+        <EditSkillsForm formWidth={"12/12"} formName={"Edit Skill"} formTitle={"Skill Infos"} formElements={mySkills} handleSubmit={EditASkill}/>
         </div>
     )
 }

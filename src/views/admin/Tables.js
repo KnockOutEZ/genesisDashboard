@@ -6,6 +6,8 @@ import axios from 'axios';
 import authHeader from "components/services/auth-header";
 import AddProfessionalExperienceCardTable from "components/Sections/ProfessionalExperience/ProfessionalExperienceCardTable";
 import ProjectsCardTable from "components/Sections/Projects/ProjectsCardTable";
+import SkillsAreaCardTable from "components/Sections/SkillAreas/SkillsAreaCardTable";
+import SocialsCardTable from "components/Sections/SocialLinks/SocialLinksCardTable";
 const API_URL = "https://rest-api-portfolio-production.up.railway.app/";
 // components
 
@@ -16,6 +18,8 @@ const Tables = () => {
   const [MyHobby, setMyHobbyData] = useState([]);
   const [myprofessional, setmyprofessionalData] = useState([]);
   const [myProjects, setmyProjectsData] = useState([]);
+  const [mySkillsArea, setMySkillsAreaData] = useState([]);
+  const [mySocials, setMySocialsData] = useState([]);
 
   useEffect(() => {
     axios.get(API_URL + 'myskills', { headers: authHeader() })
@@ -53,6 +57,22 @@ const Tables = () => {
       axios.get(API_URL + 'myprojects', { headers: authHeader() })
       .then((response) => {
         setmyProjectsData(response.data)
+      })
+      .catch((error) => {
+        console.log("Error is: " + error);
+      });
+
+      axios.get(API_URL + 'myskillareas', { headers: authHeader() })
+      .then((response) => {
+        setMySkillsAreaData(response.data)
+      })
+      .catch((error) => {
+        console.log("Error is: " + error);
+      });
+
+      axios.get(API_URL + 'mysocials', { headers: authHeader() })
+      .then((response) => {
+        setMySocialsData(response.data)
       })
       .catch((error) => {
         console.log("Error is: " + error);
@@ -109,6 +129,26 @@ const Tables = () => {
       });
   }
 
+  function deleteMySkillsArea(id){
+    axios.delete(API_URL + 'skillareas/' + id, { headers: authHeader() })
+      .then((response) => {
+        window.location.reload()
+      })
+      .catch((error) => {
+        console.log("Error is: " + error);
+      });
+  }
+
+  function deleteMySocialLink(id){
+    axios.delete(API_URL + 'socials/' + id, { headers: authHeader() })
+      .then((response) => {
+        window.location.reload()
+      })
+      .catch((error) => {
+        console.log("Error is: " + error);
+      });
+  }
+
 
   return (
     <>
@@ -119,6 +159,8 @@ const Tables = () => {
           <HobbiesCardTable color= {"light"} getData={MyHobby} deleteMySkill={deleteMyHobby}/>
           <AddProfessionalExperienceCardTable color= {"dark"} getData={myprofessional} deleteMySkill={deleteMyProfession}/>
           <ProjectsCardTable color= {"light"} getData={myProjects} deleteMySkill={deleteMyProject}/>
+          <SkillsAreaCardTable color= {"dark"} getData={mySkillsArea} deleteMySkill={deleteMySkillsArea}/>
+          <SocialsCardTable color= {"light"} getData={mySocials} deleteMySkill={deleteMySocialLink}/>
         </div>
         {/* <div className="w-full mb-12 px-4">
           <CardTable color="dark" />
