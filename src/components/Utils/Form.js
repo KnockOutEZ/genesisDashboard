@@ -35,9 +35,9 @@ export default function Form(props) {
     axios.put(API_URL + 'users/'+localStorage.getItem('userid'),formData, { headers: authHeader() })
     .then(response =>{
         alert.success("Lets goooo!!")
-      localStorage.removeItem("user");
-      localStorage.removeItem("userid");
-      window.location.reload()
+      // localStorage.removeItem("user");
+      // localStorage.removeItem("userid");
+      // window.location.reload()
     }).catch((error) => {
       alert.error(error.response.data.error)
     });
@@ -57,7 +57,7 @@ export default function Form(props) {
                 className="bg-lightBlue-500 text-white active:bg-lightBlue-600 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 ease-linear transition-all duration-150"
                 type="submit"
               >
-                Save And Logout
+                Save
               </button>
               <button
                 onClick={props.HandleDeleteFunc}
