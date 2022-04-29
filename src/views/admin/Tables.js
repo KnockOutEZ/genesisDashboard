@@ -154,13 +154,13 @@ const Tables = () => {
     <>
       <div className="flex flex-wrap mt-4">
         <div className="w-full mb-12 px-4">
+        <SkillsAreaCardTable color= {"dark"} getData={mySkillsArea} deleteMySkill={deleteMySkillsArea}/>
           <SkillsCardTable color= {"light"} getData={mySkills} deleteMySkill={deleteMySkill}/>
+          <ProjectsCardTable color= {"dark"} getData={myProjects} deleteMySkill={deleteMyProject}/>
+          <AddProfessionalExperienceCardTable color= {"light"} getData={myprofessional} deleteMySkill={deleteMyProfession}/>
           <EducationCardTable color= {"dark"} getData={MyEducation} deleteMySkill={deleteMyEducation}/>
-          <HobbiesCardTable color= {"light"} getData={MyHobby} deleteMySkill={deleteMyHobby}/>
-          <AddProfessionalExperienceCardTable color= {"dark"} getData={myprofessional} deleteMySkill={deleteMyProfession}/>
-          <ProjectsCardTable color= {"light"} getData={myProjects} deleteMySkill={deleteMyProject}/>
-          <SkillsAreaCardTable color= {"dark"} getData={mySkillsArea} deleteMySkill={deleteMySkillsArea}/>
           <SocialsCardTable color= {"light"} getData={mySocials} deleteMySkill={deleteMySocialLink}/>
+          <HobbiesCardTable color= {"dark"} getData={MyHobby} deleteMySkill={deleteMyHobby}/>
         </div>
         {/* <div className="w-full mb-12 px-4">
           <CardTable color="dark" />
