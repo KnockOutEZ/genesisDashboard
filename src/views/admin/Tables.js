@@ -8,7 +8,7 @@ import AddProfessionalExperienceCardTable from "components/Sections/Professional
 import ProjectsCardTable from "components/Sections/Projects/ProjectsCardTable";
 import SkillsAreaCardTable from "components/Sections/SkillAreas/SkillsAreaCardTable";
 import SocialsCardTable from "components/Sections/SocialLinks/SocialLinksCardTable";
-const API_URL = "https://rest-api-portfolio-production.up.railway.app/";
+const API_URL = "https://genesisapi.up.railway.app/";
 // components
 
 

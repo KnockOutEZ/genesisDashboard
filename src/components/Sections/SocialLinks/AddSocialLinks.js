@@ -4,7 +4,7 @@ import axios from 'axios';
 import authHeader from "../../services/auth-header";
 import { useHistory } from "react-router-dom";
 import { useAlert } from 'react-alert'
-const API_URL = "https://rest-api-portfolio-production.up.railway.app/";
+const API_URL = "https://genesisapi.up.railway.app/";
 
 
 const AddSocialLinks = () =>{

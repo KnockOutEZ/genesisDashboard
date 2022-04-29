@@ -49,7 +49,7 @@ export default function CardPageVisits() {
                 ALL PROFILE DATA
                 </th>
                 <th className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
-                  {"https://rest-api-portfolio-production.up.railway.app/users/"+localStorage.getItem("userid")}
+                  {"https://genesisapi.up.railway.app/users/"+localStorage.getItem("userid")}
                 </th>
               </tr>
               <tr>
@@ -58,7 +58,7 @@ export default function CardPageVisits() {
                 All SKILLS
                 </th>
                 <th className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
-                  {"https://rest-api-portfolio-production.up.railway.app/"+localStorage.getItem("userid")+"/myskills"}
+                  {"https://genesisapi.up.railway.app/"+localStorage.getItem("userid")+"/myskills"}
                 </th>
               </tr>
               <tr>
@@ -67,7 +67,7 @@ export default function CardPageVisits() {
                 SINGLE SKILL
                 </th>
                 <th className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
-                  {"https://rest-api-portfolio-production.up.railway.app/"+localStorage.getItem("userid")+"/myskills/YOUR SKILL ID"}
+                  {"https://genesisapi.up.railway.app/"+localStorage.getItem("userid")+"/myskills/YOUR SKILL ID"}
                 </th>
               </tr>
               
@@ -77,7 +77,7 @@ export default function CardPageVisits() {
                 ALL SKILL AREAS
                 </th>
                 <th className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
-                  {"https://rest-api-portfolio-production.up.railway.app/"+localStorage.getItem("userid")+"/myskillareas"}
+                  {"https://genesisapi.up.railway.app/"+localStorage.getItem("userid")+"/myskillareas"}
                 </th>
               </tr>
               <tr>
@@ -86,7 +86,7 @@ export default function CardPageVisits() {
                 SINGLE Skill Area
                 </th>
                 <th className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
-                  {"https://rest-api-portfolio-production.up.railway.app/"+localStorage.getItem("userid")+"/myskillareas/Your Skill Area ID"}
+                  {"https://genesisapi.up.railway.app/"+localStorage.getItem("userid")+"/myskillareas/Your Skill Area ID"}
                 </th>
               </tr>
               <tr>
@@ -95,7 +95,7 @@ export default function CardPageVisits() {
                 ALL PROJECTS
                 </th>
                 <th className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
-                  {"https://rest-api-portfolio-production.up.railway.app/"+localStorage.getItem("userid")+"/myprojects"}
+                  {"https://genesisapi.up.railway.app/"+localStorage.getItem("userid")+"/myprojects"}
                 </th>
               </tr>
               <tr>
@@ -104,7 +104,7 @@ export default function CardPageVisits() {
                 SINGLE PROJECT
                 </th>
                 <th className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
-                  {"https://rest-api-portfolio-production.up.railway.app/"+localStorage.getItem("userid")+"/myprojects/Your Project ID"}
+                  {"https://genesisapi.up.railway.app/"+localStorage.getItem("userid")+"/myprojects/Your Project ID"}
                 </th>
               </tr>
               <tr>
@@ -113,7 +113,7 @@ export default function CardPageVisits() {
                 ALL EDUCATION INFOS
                 </th>
                 <th className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
-                  {"https://rest-api-portfolio-production.up.railway.app/"+localStorage.getItem("userid")+"/myeducation"}
+                  {"https://genesisapi.up.railway.app/"+localStorage.getItem("userid")+"/myeducation"}
                 </th>
               </tr>
               <tr>
@@ -122,7 +122,7 @@ export default function CardPageVisits() {
                 SINGLE EDUCATION INFO
                 </th>
                 <th className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
-                  {"https://rest-api-portfolio-production.up.railway.app/"+localStorage.getItem("userid")+"/myeducation/YOUR EDUCATION ID"}
+                  {"https://genesisapi.up.railway.app/"+localStorage.getItem("userid")+"/myeducation/YOUR EDUCATION ID"}
                 </th>
               </tr>
               <tr>
@@ -131,7 +131,7 @@ export default function CardPageVisits() {
                 ALL PROFESSIONAL EXPERIENCES
                 </th>
                 <th className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
-                  {"https://rest-api-portfolio-production.up.railway.app/"+localStorage.getItem("userid")+"/myprofessional"}
+                  {"https://genesisapi.up.railway.app/"+localStorage.getItem("userid")+"/myprofessional"}
                 </th>
               </tr>
               <tr>
@@ -140,7 +140,7 @@ export default function CardPageVisits() {
                 SINGLE PROFESSIONAL EXPERIENCE
                 </th>
                 <th className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
-                  {"https://rest-api-portfolio-production.up.railway.app/"+localStorage.getItem("userid")+"/myprofessional/YOUR PROFESSIONAL EXP ID"}
+                  {"https://genesisapi.up.railway.app/"+localStorage.getItem("userid")+"/myprofessional/YOUR PROFESSIONAL EXP ID"}
                 </th>
               </tr>
               <tr>
@@ -149,7 +149,7 @@ export default function CardPageVisits() {
                 ALL HOBBIES
                 </th>
                 <th className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
-                  {"https://rest-api-portfolio-production.up.railway.app/"+localStorage.getItem("userid")+"/myhobbies"}
+                  {"https://genesisapi.up.railway.app/"+localStorage.getItem("userid")+"/myhobbies"}
                 </th>
               </tr>
               <tr>
@@ -158,7 +158,7 @@ export default function CardPageVisits() {
                 SINGLE HOBBY
                 </th>
                 <th className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
-                  {"https://rest-api-portfolio-production.up.railway.app/"+localStorage.getItem("userid")+"/myhobbies/YOUR HOBBY ID"}
+                  {"https://genesisapi.up.railway.app/"+localStorage.getItem("userid")+"/myhobbies/YOUR HOBBY ID"}
                 </th>
               </tr>
               <tr>
@@ -167,7 +167,7 @@ export default function CardPageVisits() {
                 ALL SOCIAL LINKS
                 </th>
                 <th className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
-                  {"https://rest-api-portfolio-production.up.railway.app/"+localStorage.getItem("userid")+"/mysocials"}
+                  {"https://genesisapi.up.railway.app/"+localStorage.getItem("userid")+"/mysocials"}
                 </th>
               </tr>
               <tr>
@@ -176,7 +176,7 @@ export default function CardPageVisits() {
                 SINGLE SOCIAL LINK
                 </th>
                 <th className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
-                  {"https://rest-api-portfolio-production.up.railway.app/"+localStorage.getItem("userid")+"/mysocials/YOUR SOCIAL LINK ID"}
+                  {"https://genesisapi.up.railway.app/"+localStorage.getItem("userid")+"/mysocials/YOUR SOCIAL LINK ID"}
                 </th>
               </tr>
             </tbody>

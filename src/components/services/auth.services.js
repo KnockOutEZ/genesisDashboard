@@ -1,5 +1,5 @@
 import axios from "axios";
-const API_URL = "https://rest-api-portfolio-production.up.railway.app/"
+const API_URL = "https://genesisapi.up.railway.app/"
 class AuthService {
   login(email, password) {
     return axios

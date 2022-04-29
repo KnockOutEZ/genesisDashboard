@@ -4,7 +4,7 @@ import axios from 'axios';
 import { useAlert } from 'react-alert'
 import authHeader from '../../components/services/auth-header';
 import AuthService from '../../components/services/auth.services';
-const API_URL = "https://rest-api-portfolio-production.up.railway.app/";
+const API_URL = "https://genesisapi.up.railway.app/";
 
 const Settings = () => {
   const [userData, setUserData] = useState({});

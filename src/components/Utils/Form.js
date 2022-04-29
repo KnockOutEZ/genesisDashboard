@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useHistory } from "react-router-dom";
 import authHeader from '../../components/services/auth-header';
 import { useAlert } from 'react-alert'
-const API_URL = "https://rest-api-portfolio-production.up.railway.app/";
+const API_URL = "https://genesisapi.up.railway.app/";
 // components
 
 export default function Form(props) {

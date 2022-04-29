@@ -1,6 +1,6 @@
 import axios from 'axios';
 import authHeader from './auth-header';
-const API_URL = "https://rest-api-portfolio-production.up.railway.app/";
+const API_URL = "https://genesisapi.up.railway.app/";
 class UserService {
   getAllUsers() {
     return axios.get(API_URL + 'users');

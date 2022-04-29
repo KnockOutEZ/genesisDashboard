@@ -5,7 +5,7 @@ import CardStats from "components/Cards/CardStats.js";
 import React,{useState, useEffect } from "react";
 import axios from 'axios';
 import { useAlert } from 'react-alert'
-const API_URL = "https://rest-api-portfolio-production.up.railway.app/";
+const API_URL = "https://genesisapi.up.railway.app/";
 
 export default function HeaderStats() {
   const [userdata, setUserData] = useState();
