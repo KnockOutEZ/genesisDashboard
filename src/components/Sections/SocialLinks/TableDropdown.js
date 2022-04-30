@@ -44,15 +44,15 @@ const NotificationDropdown = (props) => {
         >
           Edit
         </Link>
-        <a
+        <div
           href=""
           className={
-            "text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
+            "text-sm py-2 px-4 font-normal cursor-pointer block w-full whitespace-nowrap bg-transparent text-blueGray-700"
           }
           onClick={() =>{props.deleteFunc(props.id)}}
         >
           Delete
-        </a>
+        </div>
         {/* <a
           href=""
           className={
