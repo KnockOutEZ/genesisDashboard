@@ -44,12 +44,14 @@ export default class Register extends Component {
               window.location.reload();
             },
             (error) => {
-              const resMessage =error.response
+              const resMessage =error.response.data.error
+          alert(resMessage)
             }
           );
         },
         error => {
-          const resMessage = error.response
+          const resMessage =error.response.data.error
+          alert(resMessage)
         }
       );
   }
