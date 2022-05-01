@@ -1,8 +1,8 @@
 {
-  "name": "notus-react",
+  "name": "genesis-dashboard",
   "version": "1.1.0",
-  "description": "Genesis - A free Tailwind CSS and React UI Kit and Admin by Creative Tim.",
-  "repository": "https://github.com/creativetimofficial/notus-react",
+  "description": "genesisDashboard - A free portfolio updating website.",
+  "repository": "https://github.com/KnockOutEZ/genesisDashboard",
   "license": "MIT",
   "dependencies": {
     "@fortawesome/fontawesome-free": "5.15.3",
